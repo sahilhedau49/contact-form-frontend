@@ -3,6 +3,7 @@ import axios from "axios";
 
 function App() {
   const [data, setData] = useState({ name: "", phone: "", emailid: "" });
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -14,6 +15,10 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false);
+    }, 2000);
     console.log(data);
     try {
       await axios.post("http://localhost:5000/", data);
@@ -39,6 +44,13 @@ function App() {
           Submit
         </button>
       </form>
+      {success && (
+        <div>
+          <div className="w-full text-center bg-gray-950 text-slate-200">
+            Success
+          </div>
+        </div>
+      )}
     </div>
   );
 }
