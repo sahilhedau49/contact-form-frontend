@@ -1,0 +1,10 @@
+.form {
+  background: linear-gradient(45deg, rgb(153, 153, 153), rgb(164, 164, 164));
+  box-shadow: 0 0 50px rgb(204, 204, 204);
+  border: 1px solid #c6c6c6;
+}
+input,
+.btn {
+  background: rgb(219, 219, 219);
+  border-color: rgb(219, 219, 219);
+}
